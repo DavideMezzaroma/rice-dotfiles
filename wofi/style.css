@@ -1,0 +1,17 @@
+window {
+	font-size: 22px;
+	font-family: CaskaydiaCove Nerd Font;
+	color: #c0caf5;
+
+	background-color: rgba(26, 27, 38, 0.95);
+}
+
+#entry:selected{
+	background-color: rgba(122, 162, 247, 0.95);
+	color: #c0caf5;
+	outline: none;
+}
+
+#text:selected{
+	color: #c0caf5;
+}

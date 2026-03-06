@@ -2,14 +2,14 @@
     "modules-left": ["hyprland/workspaces", "hyprland/mode"],
     "modules-center": ["clock"],
     //"modules-right": ["tray", "network", "pulseaudio", "custom/power"],
-    "modules-right": ["network", "pulseaudio", "custom/power"],
+    "modules-right": ["battery", "network", "pulseaudio", "backlight"],
 
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
     "network": {
-        "format-wifi": "({signalStrength}%)",
-        "format-ethernet": "",
+        "format-wifi": "{signalStrength}%  ",
+        "format-ethernet": " ",
         "format-disconnected": "X", 
         "max-length": 50
         //"on-click": "kitty -e 'nmtui'"
@@ -18,13 +18,13 @@
 	//"device": "acpi_video1",
 	//"format": "{percent}% {icon}",
 	"format": "{icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": " ",
+            "deactivated": " "
         }
     },
     "tray": {
@@ -32,45 +32,46 @@
         "spacing": 10
     },
     "clock": {
+		"format": " {:%d-%m-%Y | %H:%M} ",
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-calendar": "{:%d-%m-%Y}",
-	"on-click": "gnome-calendar"
+        //"format-calendar": "{:%d-%m-%Y}",
+	//"on-click": "gnome-calendar"
     },
     "battery":{
-	    "format": "{capacity}% {icon}",
-	    "format-full": "{capacity}% {icon}",
-	    "format-charging": "{capacity}% ",
-	    "format-plugged": "{capacity}% ",
-            "format-alt": "{time} {icon}",
+	    "format": " {capacity}% {icon}|",
+	    "format-full": " {capacity}% {icon} |",
+	    "format-charging": "  |",
+	    "format-plugged": "  |",
+            "format-alt": " {time} {icon}|",
             // "format-good": "", // An empty format will hide the module
             // "format-full": "",
-            "format-icons": ["", "", "", "", ""]
+            "format-icons": [" ", " ", " ", " ", " "]
 	    
     },
     "pulseaudio": {
-        //"format": "{volume}% {icon} ",
-        "format": " {icon} ",
+        "format": "|{volume}% {icon}|",
+        //"format": " {icon} ",
         //"format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth": " {icon} {format_source}",
-        "format-bluetooth-muted": "X{icon} {format_source}",
+        "format-bluetooth": "| {icon}  {format_source} |",
+        "format-bluetooth-muted": "| X{icon}  {format_source} |",
         //"format-muted": "0% {icon} ",
-		"format-muted": "0% {icon} ",
+		"format-muted": "| 0% {icon} |",
         //"format-source": "{volume}% ",
         "format-source": "",
-        "format-source-muted": "",
+        "format-source-muted": " ",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": ["", " ", " "]
         },
         "on-click": "pavucontrol"
     },
 	"custom/power": {
-		"format": "",
+		"format": " ",
 		"on-click": "wlogout"
 	},
     "custom/scratchpad-indicator": {
